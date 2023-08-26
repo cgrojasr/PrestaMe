@@ -1,0 +1,13 @@
+<form #form="ngForm">
+    <div class="row">
+        <div class="col-md-4">
+            {{objCuentaItem.numero_cuenta}}
+        </div>
+        <div class="col-md-2">
+            {{objCuentaItem.saldo_disponible}}
+        </div>
+        <div class="col-md-1 mb-2">
+            <button class="btn btn-primary" type="button" name="btn_MostrarMovimientos" (click)="btnMovimientos_Click(objCuentaItem.id_cuenta)">Movimientos</button>
+        </div>
+    </div>
+</form>

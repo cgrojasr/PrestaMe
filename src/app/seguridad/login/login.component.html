@@ -1,2 +1,28 @@
-<p>login works!</p>
-<p>YUjuuuuu!!!</p>
+<form #form="ngForm">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            Presta-Me
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">e-mail</span>
+                <input type="text" class="form-control" placeholder="Ingrese su correo" name="email" [(ngModel)]="objClienteAutenticar.email">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">contraseña</span>
+                <input type="password" class="form-control" placeholder="Ingrese su contraseña" name="password" [(ngModel)]="objClienteAutenticar.password">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-md-5">
+            <button class="btn btn-primary" type="button" (click)="btnIngresar_OnClick()" >Ingresar</button>
+        </div>
+    </div>
+</form>

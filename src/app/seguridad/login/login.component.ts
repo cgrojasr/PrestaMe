@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClienteAutenticar } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  objClienteAutenticar: ClienteAutenticar = {
+    email: '',
+    password: ''
+  }
 
+  constructor(
+    private router: Router
+  ){}
+
+  btnIngresar_OnClick():void{
+    console.log("Estoy en el metodo click del boton")
+    if(this.objClienteAutenticar.email === "pciscroj@upc.edu.pe" && this.objClienteAutenticar.password === "1"){
+      this.router.navigateByUrl("comercial/home")
+    }
+  }
 }
