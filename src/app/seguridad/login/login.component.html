@@ -1,28 +1,26 @@
 <form #form="ngForm">
-    <div class="row">
-        <div class="col-md-12 mb-3">
-            Presta-Me
+    <div class="position-absolute top-50 start-50 translate-middle rounded-top rounded-bottom" style="width: 300px; background-color: white;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 mb-3">
+                <h1 style="font-family: Travax; color: #2700a3;">Presta-Me</h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
+        <div class="row justify-content-center">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">e-mail</span>
+                <span class="input-group-text" id="basic-addon1">✉️</span>
                 <input type="text" class="form-control" placeholder="Ingrese su correo" name="email" [(ngModel)]="objClienteAutenticar.email">
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
+        <div class="row justify-content-center">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">contraseña</span>
+                <span class="input-group-text" id="basic-addon1">🔐</span>
                 <input type="password" class="form-control" placeholder="Ingrese su contraseña" name="password" [(ngModel)]="objClienteAutenticar.password">
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2 offset-md-5">
-            <button class="btn btn-primary" type="button" (click)="btnIngresar_OnClick()" >Ingresar</button>
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <button class="btn btn-bd-primary mb-3" type="button" (click)="btnIngresar_OnClick()" >Ingresar</button>
+            </div>
         </div>
     </div>
 </form>
