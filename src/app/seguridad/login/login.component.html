@@ -11,7 +11,7 @@
                     <span class="input-group-text" id="basic-addon1">✉️</span>
                     <input type="text" class="form-control" placeholder="Ingrese su correo" name="txtEmail" id="txtEmail"
                     formControlName="email">
-                    <div class="error" *ngIf="authForm.get('email')?.invalid && (authForm.get('email')?.dirty || authForm.get('email')?.touched || isSubmitted)">
+                    <div class="error" *ngIf="authForm.get('email')?.hasError('required') && (authForm.get('email')?.dirty || authForm.get('email')?.touched || isSubmitted)">
                         Se requiere email o el ingresado es incorrecto
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     <span class="input-group-text" id="basic-addon1">🔐</span>
                     <input type="password" class="form-control" placeholder="Ingrese su contraseña" name="password" 
                     formControlName="password">
-                    <div class="error" *ngIf="authForm.get('password')?.invalid && (authForm.get('password')?.dirty || authForm.get('password')?.touched || isSubmitted)">
+                    <div class="error" *ngIf="authForm.get('password')?.hasError('required') && (authForm.get('password')?.dirty || authForm.get('password')?.touched || isSubmitted)">
                         Se requiere una contraseña
                     </div>
                 </div>
