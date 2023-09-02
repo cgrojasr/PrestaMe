@@ -31,14 +31,14 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    // if(this.cookies.get('clienteAuth') !== ''){
-      // this.objClienteLogin = JSON.parse(this.cookies.get('clienteAuth'));
-      // if(this.objClienteLogin.sesion){
-      //   this.router.navigateByUrl("home");
-      // }
-    // } else {
-      // localStorage.clear();
-    // }
+    if (this.cookies.get('clienteAuth') !== '') {
+      this.objClienteLogin = JSON.parse(this.cookies.get('clienteAuth'));
+      if (this.objClienteLogin !== null) {
+        this.router.navigateByUrl("comercial/home");
+      }
+    } else {
+      localStorage.clear();
+    }
   }
 
   btnIngresar_OnClick():void{

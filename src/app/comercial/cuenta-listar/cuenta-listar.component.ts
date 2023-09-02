@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { cuenta_item } from 'src/app/models/cuenta';
 
 @Component({
@@ -6,7 +6,7 @@ import { cuenta_item } from 'src/app/models/cuenta';
   templateUrl: './cuenta-listar.component.html',
   styleUrls: ['./cuenta-listar.component.css']
 })
-export class CuentaListarComponent {
+export class CuentaListarComponent implements OnInit {
   lstCuentaItems: cuenta_item[] = [
     {
       id_cuenta: 1,
@@ -24,4 +24,15 @@ export class CuentaListarComponent {
       saldo_disponible: 1000.00
     }
   ]
+
+  ngOnInit(): void {
+    
+    if(localStorage.getItem('lstCuentaItems') !== '') {
+      console.log('Seteando arreglo')
+      this.lstCuentaItems = JSON.parse(localStorage.getItem('lstCuentaItems') || '')
+      console.log(this.lstCuentaItems)
+    } else {
+      localStorage.setItem('lstCuentaItems', JSON.stringify(this.lstCuentaItems))
+    }
+  }
 }
