@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComercialComponent } from './comercial.component';
 import { HomeComponent } from './home/home.component';
 import { CuentaMovimientoComponent } from './cuenta-movimiento/cuenta-movimiento.component';
+import { CuentaGestionarComponent } from './cuenta-gestionar/cuenta-gestionar.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'movimiento/:id_cuenta',
         component: CuentaMovimientoComponent
+      },
+      {
+        path: 'cuenta',
+        component: CuentaGestionarComponent
       }
     ]
   }

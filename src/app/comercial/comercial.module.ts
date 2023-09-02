@@ -9,6 +9,8 @@ import { CuentaListarComponent } from './cuenta-listar/cuenta-listar.component';
 import { PrestamoListarComponent } from './prestamo-listar/prestamo-listar.component';
 import { FormsModule } from '@angular/forms';
 import { CuentaItemComponent } from './cuenta-item/cuenta-item.component';
+import { CuentaGestionarComponent } from './cuenta-gestionar/cuenta-gestionar.component';
+import { PrestamoGestionarComponent } from './prestamo-gestionar/prestamo-gestionar.component';
 
 
 
@@ -19,7 +21,9 @@ import { CuentaItemComponent } from './cuenta-item/cuenta-item.component';
     CuentaMovimientoComponent,
     CuentaListarComponent,
     PrestamoListarComponent,
-    CuentaItemComponent
+    CuentaItemComponent,
+    CuentaGestionarComponent,
+    PrestamoGestionarComponent
   ],
   imports: [
     CommonModule,
