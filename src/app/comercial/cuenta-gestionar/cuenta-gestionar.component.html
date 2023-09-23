@@ -4,16 +4,16 @@
             <h2>Apertura de cuenta</h2>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-3 mb-3">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="txtNombres" placeholder="Nombres" disabled="true">
+                <input type="text" class="form-control" id="txtNombres" placeholder="Nombres" disabled="true" name="nombres" [ngModel]="objCliente.nombres">
                 <label for="txtNombres">Nombres</label>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="txtApellidos" placeholder="Apellidos" disabled="true">
+                <input type="text" class="form-control" id="txtApellidos" placeholder="Apellidos" disabled="true" name="apellidos" [ngModel]="objCliente.apellidos">
                 <label for="txtApellidos">Apellidos</label>
             </div>
         </div>
@@ -21,13 +21,13 @@
     <div class="row">
         <div class="col-md-3 mb-3">
             <div class="form-floating mb-3">
-                <input type="date" class="form-control" id="txtFechaNacimiento" placeholder="01/01/2023" disabled="true">
-                <label for="txtFechaNacimiento">Correo electrónico</label>
+                <input type="date" class="form-control" id="txtFechaNacimiento" placeholder="01/01/2023" disabled="true" name="fecha_nacimiento" [ngModel]="objCliente.fecha_nacimiento">
+                <label for="txtFechaNacimiento">Fecha Nacimiento</label>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="txtEmail" placeholder="usuario@dominio.com" disabled="true">
+                <input type="email" class="form-control" id="txtEmail" placeholder="usuario@dominio.com" disabled="true" name="correo" [ngModel]="objCliente.email">
                 <label for="txtEmail">Correo electrónico</label>
             </div>
         </div>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="txtNroDocumento" placeholder="12345678" disabled="true">
+                <input type="text" class="form-control" id="txtNroDocumento" placeholder="12345678" disabled="true" name="numero_doc_identidad" [ngModel]="objCliente.numero_doc_identidad">
                 <label for="txtNroDocumento">Número de documento</label>
             </div>
         </div>
@@ -68,6 +68,40 @@
                 <input type="text" class="form-control" id="txtNroCuenta" placeholder="000-000000-0-00" disabled="true">
                 <label for="txtNroCuenta">Número de cuenta</label>
             </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-2 mb-3 offset-md-2" style="text-align: end;">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtMontoMin" name="minimo" [(ngModel)]="valor_minimo">
+                <label for="txtMontoMin">Mínimo</label>
+            </div>
+        </div>
+        <div class="col-md-2 mb-3" style="text-align: end;">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtMontoMax" name="maximo" [(ngModel)]="valor_maximo">
+                <label for="txtMontoMax">Máximo</label>
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-4 mb-3 offset-md-2">
+            <input type="range" class="form-range" #valor id="valor" [min]="valor_minimo" [max]="valor_maximo" (input)="yourMethod(valor.value)">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3 offset-md-2">
+            <label for="valor">Monto de apertura: {{ valor.value }} soles</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3 offset-md-2">
+            <label for="valor">Monto mínimo de utilidad: {{ +valor.value * (tasa_rango.tasa_minimo)| number : '1.2-2'  }} soles</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3 offset-md-2">
+            <label for="valor">Monto máximo de utilidad: {{ (+valor.value * (tasa_rango.tasa_maximo))| number : '1.2-2'  }} soles</label>
         </div>
     </div>
     <div class="row">

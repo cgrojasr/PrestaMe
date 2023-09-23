@@ -1,16 +1,20 @@
 export interface ClienteAutenticar{
-    email: String,
-    password: String
+    email: string,
+    password: string
 }
 
 export interface ClienteLogin {
-    id_cliente: number
+    id_cliente: number,
+    nombres: string,
+    apellidos: string
 }
 
 export interface Cliente {
     id_cliente: number,
-    nombres: String,
-    apellidos: String,
+    nombres: string,
+    apellidos: string,
     fecha_nacimiento: Date,
-    email: String
+    email: string,
+    id_doc_identidad: number,
+    numero_doc_identidad: string
 }
