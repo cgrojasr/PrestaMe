@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Cliente, ClienteLogin } from 'src/app/models/cliente';
-import { cuenta_item } from 'src/app/models/cuenta';
+import { CuentaItem } from 'src/app/models/cuenta';
 import { TasaRango_activo } from 'src/app/models/tasa';
 import { ClienteService } from 'src/app/services/cliente/cliente.service';
 import { TasaService } from 'src/app/services/tasa/tasa.service';
@@ -29,7 +29,7 @@ export class CuentaGestionarComponent implements OnInit {
     id_tasa_rango: 0
   }
 
-  objCuentaItem: cuenta_item = {
+  objCuentaItem: CuentaItem = {
     id_cuenta: 0,
     numero_cuenta: '',
     saldo_disponible: 0
@@ -63,7 +63,7 @@ export class CuentaGestionarComponent implements OnInit {
 
   btnAperturaCuenta_OnClick() {
     console.log('Inicio de apertura')
-    let lstCuentaItems: cuenta_item[];
+    let lstCuentaItems: CuentaItem[];
     lstCuentaItems = JSON.parse(localStorage.getItem('lstCuentaItems') || '') ;
 
     this.objCuentaItem.id_cuenta = 999,

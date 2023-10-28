@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CuentaItemComponent } from './cuenta-item/cuenta-item.component';
 import { CuentaGestionarComponent } from './cuenta-gestionar/cuenta-gestionar.component';
 import { PrestamoGestionarComponent } from './prestamo-gestionar/prestamo-gestionar.component';
+import { PrestamoItemComponent } from './prestamo-item/prestamo-item.component';
 
 
 
@@ -23,7 +24,8 @@ import { PrestamoGestionarComponent } from './prestamo-gestionar/prestamo-gestio
     PrestamoListarComponent,
     CuentaItemComponent,
     CuentaGestionarComponent,
-    PrestamoGestionarComponent
+    PrestamoGestionarComponent,
+    PrestamoItemComponent
   ],
   imports: [
     CommonModule,

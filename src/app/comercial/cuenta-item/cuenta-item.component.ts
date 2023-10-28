@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { cuenta_item } from 'src/app/models/cuenta';
+import { CuentaItem } from 'src/app/models/cuenta';
 
 @Component({
   selector: 'app-cuenta-item',
@@ -8,7 +8,7 @@ import { cuenta_item } from 'src/app/models/cuenta';
   styleUrls: ['./cuenta-item.component.css']
 })
 export class CuentaItemComponent {
-  @Input() objCuentaItem: cuenta_item = {
+  @Input() objCuentaItem: CuentaItem = {
     id_cuenta: 0,
     numero_cuenta: '',
     saldo_disponible: 0

@@ -20,4 +20,19 @@ export class ClienteService {
   BuscarPorId(id_cliente: number){
     return this.http.get<Cliente>(`${environment.url}cliente/`+id_cliente);
   }
+
+  Registrar(cliente: Cliente):Observable<Cliente>{
+    cliente.id_cliente = 1
+    return new Observable( observer => {
+      observer.next( cliente )
+      observer.complete()
+    })
+  }
+
+  Modificar(cliente: Cliente):Observable<Cliente>{
+    return new Observable( observer => {
+      observer.next( cliente )
+      observer.complete()
+    })
+  }
 }

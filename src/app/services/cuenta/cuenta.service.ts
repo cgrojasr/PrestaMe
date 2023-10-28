@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { cuenta_item } from 'src/app/models/cuenta';
+import { CuentaItem } from 'src/app/models/cuenta';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,6 @@ export class CuentaService {
   ) { }
 
   ListarPorCliente(id_cliente: number){
-    return this.http.get<cuenta_item[]>(`${this.url}`+`${id_cliente}`)
+    return this.http.get<CuentaItem[]>(`${this.url}`+`${id_cliente}`)
   }
 }
