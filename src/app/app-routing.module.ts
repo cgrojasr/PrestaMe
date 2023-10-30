@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'comercial',
     loadChildren: ()=>import('./comercial/comercial.module').then(m=>m.ComercialModule)
+  },
+  {
+    path: 'administrativo',
+    loadChildren: ()=>import('./administrativo/administrativo.module').then(m=>m.AdministrativoModule)
   }
 ];
 

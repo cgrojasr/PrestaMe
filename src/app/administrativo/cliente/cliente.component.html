@@ -1,0 +1,77 @@
+<form #form="ngForm">
+    <div class="container">
+        <div class="row">
+            <h1 class="font-black mb-3 mt-3">Datos Personales</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Victor Manuel" name="nombres" [(ngModel)]="objCliente.nombres">
+                    <label for="floatingInput">Nombres</label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Perez Rodriguez" name="apellidos" [(ngModel)]="objCliente.apellidos">
+                    <label for="floatingInput">Apellidos</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="floatingInput" name="fecha_nacimiento" [(ngModel)]="objCliente.fecha_nacimiento">
+                    <label for="floatingInput">Fecha Nacimiento</label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="vperez@gmail.com" name="email" [(ngModel)]="objCliente.email">
+                    <label for="floatingInput">Correo</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="password" name="valor" [(ngModel)]="objPassword.valor">
+                    <label for="floatingInput">Password</label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="password" name="confirmacion" [(ngModel)]="objPassword.confirmacion">
+                    <label for="floatingInput">Confirmar Password</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="id_doc_identidad" [(ngModel)]="objCliente.id_doc_identidad">
+                        <option *ngFor="let objTipoDocumento of lstTipoDocumento_ComboBox" [ngValue]="objTipoDocumento.id_doc_identidad">
+                            {{objTipoDocumento.nombre}}
+                        </option>
+                    </select>
+                    <label for="floatingSelect">Tipo doc. identidad</label>
+                  </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="form-floating">
+                    <input type="text" maxlength="12" class="form-control" id="floatingInput" placeholder="12345678" placeholder="password" name="numero_doc_identidad" [(ngModel)]="objCliente.numero_doc_identidad">
+                    <label for="floatingInput">Nro. Documento</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 offset-sm-8 col-md-1 offset-md-6">
+                <button class="btn btn-primary-custom">Cancelar</button>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <button class="btn btn-primary-custom">Registrar</button>
+            </div>
+        </div>
+    </div>
+    {{objCliente | json}}
+    {{objPassword | json}}
+</form>
